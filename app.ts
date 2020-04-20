@@ -1,11 +1,18 @@
-function add(n1: number, n2: number): number {
-    return n1 + n2;
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userInput = 'XD';
+
+if (typeof userInput == 'string') {
+    userName = userInput;
 }
 
-function printResult(num: number): void {
-    console.log('Result: ' + num);
+function generateError(message: string, errorCode: number): void {
+    throw {
+        message: message,
+        errorCode: errorCode
+    }
 }
 
-printResult(add(5, 10));
-
-let someValue: undefined;
+generateError('An error occured', 600);
